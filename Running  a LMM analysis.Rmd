@@ -73,6 +73,7 @@ spiders$Litterc    <- stand(spiders$Litter)
 ```
 
 **Question 1 - What does this standardization do? What does the scale function do?**
+creates a funstion to divide mean by standard dev.
 
 
 Now we can run the model, for this example we are going to assume that there are no interactions. We specify the random effect in R by adding the random factor parenthetically. In this case we want to incorporate the plot as a random effect by adding +(1|fplot)
@@ -86,7 +87,7 @@ qqline(resid(m1))
 
 **Question 2 - Do these residuals incorporate the random effects?**
 
-
+not so much, expecially toward the negative end
 
 To explore the answer to this question we will extract the residuals and fitted values manually and plot them.
 
@@ -206,7 +207,7 @@ m2c <- update(m2, .~. - Litterc)
 **Question 3**
 
 What does the update function do...and what are the parts of the functions input
-
+changes only one part of a line of code that you want ran for the data and to make multiple data frames
 
 Test the Herblayer effect
 
@@ -252,7 +253,7 @@ ICtab(m2,m2a,m2b,m2c,type="AICc",delta=TRUE,weights=TRUE,nobs=nrow(spiders))
 
 **Question 4 - How do you interepret these numerical results?** 
 
-
+sum sq helps estimate the amount of correlation between the data
 
 
 **Step 3 - Present numercial output and present graphical results**
